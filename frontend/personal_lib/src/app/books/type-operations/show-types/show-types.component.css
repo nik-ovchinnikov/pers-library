@@ -1,0 +1,24 @@
+.cont1 {
+    display: grid;
+    grid-template-rows: auto auto; 
+}
+ 
+h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.container {
+    position: sticky;
+    top: 0;
+    height: 100%;
+}
+
+.cont3 {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.cont-block {
+    display: contents;
+}

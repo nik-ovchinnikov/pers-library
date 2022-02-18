@@ -1,0 +1,68 @@
+<form [formGroup]="filterForm">
+  <div class="container">
+      <h4>Фильтры:</h4>
+      <div>
+          <label>По имени:</label>
+          <input type="text" formControlName="byName"><br>
+      </div>
+      <div>
+          <label for="">Дата создания: </label>
+      </div>
+      <div>
+          <label class="label-tab">от</label><input type="date" formControlName="fromCreationDate">
+      </div>
+      <div>
+          <label class="label-tab"> до </label><input type="date" formControlName="tillCreationDate"><br>
+      </div>
+      <div>
+          <label>Дата последнего изменеия:</label>
+      </div>
+      <div>
+          <label class="label-tab"> от </label><input type="date" formControlName="fromLastChange">
+      </div>
+      <div>
+          <label class="label-tab"> до </label><input type="date" formControlName="tillLastChange"><br>
+      </div>
+      <div>
+          <label>По словам в описании:</label>
+      </div>
+      <div>
+          <input type="text" formControlName="byWordsInDescription">
+      </div>
+      <div>
+          <label>По названиям разделов:</label>
+      </div>
+      <div>
+          <input type="text" formControlName="bySubplacesName">
+      </div>
+
+      <h4>Сортировка:</h4>
+
+      <div>По дате создания</div>
+      <div>
+          <label class="label-tab">По убыванию</label><input type="radio" formControlName="sortType" value="creatDateDESC">
+      </div>
+      <div>
+          <label class="label-tab">По возрастанию</label><input type="radio" formControlName="sortType" value="creatDateASC">
+      </div>
+
+      <div>По дате изменеия</div>
+      <div>
+          <label class="label-tab">По возрастанию</label><input type="radio" formControlName="sortType" value="changeDateDESC">
+      </div>
+      <div>
+          <label class="label-tab">По убыванию</label><input type="radio" formControlName="sortType" value="changeDateASC">
+      </div>
+      
+      <div>По названию</div>
+      <div>
+          <label class="label-tab">По убыванию</label><input type="radio" formControlName="sortType" value="byNameDESC">
+      </div>
+      <div>
+          <label class="label-tab">По возрастанию</label><input type="radio" formControlName="sortType" value="byNameASC">
+      </div>
+      <div>
+          <button (click)="filtersReset()" class="btn btn-secondary">Сбросить фильтры</button>
+      </div>
+  </div>
+</form>

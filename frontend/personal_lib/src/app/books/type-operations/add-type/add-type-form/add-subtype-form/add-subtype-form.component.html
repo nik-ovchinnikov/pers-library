@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="labels">
+        <label>Название подтипа:</label>
+    </div>
+    <div>
+        <input 
+            type="text"
+            [formControl]="$any(inputFormGroup.controls['subTypeName'])"    
+            placeholder="Название подтипа"
+            (keyup)="onKey($event)"
+        >
+    </div>
+    <div>
+        <label>Описание подтипа:</label>
+    </div>
+    <div>
+        <textarea
+            type="text"
+            [formControl]="$any(inputFormGroup.controls['subTypeDescription'])"
+            placeholder="Описание подтипа"
+        ></textarea>
+    </div>
+</div>

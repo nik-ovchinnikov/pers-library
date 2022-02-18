@@ -1,0 +1,36 @@
+<div class="cont1">
+    <h3 class="text-center"> Список типов</h3>
+    <div class="cont-block">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название типа</th>
+                    <th>Описание типа</th>
+                    <th>Дата создания</th>
+                    <th>Дата последнего изменения</th>
+                    <th>Список подтипов</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let type of typesToShow; let i = index">
+                    <td>{{ i + 1}}</td>
+                    <td>{{ type.name }}</td>
+                    <td>{{ type.description}}</td>
+                    <td>{{ type.creationDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+                    <td>{{ type.lastChangeDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+                    <td>
+                        <ul *ngFor="let subtype of type.bookSubTypeList">
+                            <li data-bs-toggle="tooltip" [title]="subtype.description" >{{ subtype.name }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cont3">
+            <app-type-filter-sort class="container"></app-type-filter-sort>
+            <div class="under-filter"></div>
+        </div>
+    </div>
+
+</div>

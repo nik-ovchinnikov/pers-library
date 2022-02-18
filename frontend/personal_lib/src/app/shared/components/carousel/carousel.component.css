@@ -1,0 +1,20 @@
+
+#carouselExampleIndicators {
+  width: 500px;
+  position: fixed;
+  top: 30vh;
+  left: 40vw;
+  z-index: 100;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#12c2e9, #f64f59);
+  z-index: 50;
+  opacity: 0.5;
+}
+

@@ -1,0 +1,55 @@
+<div class="cont1">
+  <h3 class="text-center"> Список книг</h3>
+  <table class="table table-dark table-striped table-hover">
+      <thead>
+          <tr>
+              <th>№</th>
+              <th>Название</th>
+              <th>Ключ</th>
+              <th>Описание</th>
+              <th>Дата создания</th>
+              <th>Дата последнего изменения</th>
+              <th>Тип - Подтип</th>
+              <th>Место - Подраздел</th>
+              <th>Изображения</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let book of booksToShow 
+            | bookFilter:filterData
+            ; let i = index">
+              <td>{{ i + 1}}</td>
+              <td>{{ book.name }}</td>
+              <td>{{ book.key }}</td>
+              <td>{{ book.description}}</td>
+              <td>{{ book.creationDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+              <td>{{ book.lastChangeDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+              <td>
+                <div>{{ book.bookType.name }}</div>
+                <div>{{ book.bookSubType.name }}</div>
+              </td>
+              <td>
+                <div>{{ book.bookPlace.name }}</div>
+                <div>{{ book.bookSubPlace.name }}</div>
+              </td>
+              <td>
+                 <img *ngIf="book.bookPictureList[0]" 
+                  src="{{'./pictures/books/' + book.bookPictureList[0].name }}"
+                  (click)="showCarousel(book.key)" 
+                 > 
+                 <div *ngIf="!book.bookPictureList[0]">Нет картинки</div>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <app-book-list-filter
+    (onFormValueChanges) = "onFilterValueChanged($event)" 
+  ></app-book-list-filter>
+
+  <app-carousel *ngIf="showCarouselFlag"
+    [sources]="sourceList"
+    (closeCarousel)="afterCloseCarousel()"
+  ></app-carousel>
+  
+</div>

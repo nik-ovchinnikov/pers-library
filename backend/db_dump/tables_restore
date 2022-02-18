@@ -1,0 +1,155 @@
+create sequence personal_lib.book_seq;
+create sequence personal_lib.book_type_seq;
+create sequence personal_lib.book_sub_type_seq;
+create sequence personal_lib.book_place_seq;
+create sequence personal_lib.book_subplace_seq;
+create sequence personal_lib.book_picture_seq;
+//========================================
+
+-- таблица для bookType
+create table personal_lib.book_type
+(
+    id int not null default nextval('personal_lib.book_type_seq'),
+    name varchar not null,
+    description varchar,
+    last_change_date timestamptz,
+    creation_date timestamptz
+);
+
+create unique index book_type_id_uindex
+    on personal_lib.book_type (id);
+
+create unique index book_type_name_uindex
+    on personal_lib.book_type (name);
+
+alter table personal_lib.book_type
+    add constraint book_type_pk
+        primary key (id);
+
+-- таблица для subtype
+create table personal_lib.book_subtype
+(
+    id int not null default nextval('personal_lib.book_sub_type_seq'),
+    name varchar not null,
+    description varchar,
+    book_type_id int,
+    book_type_name varchar,
+    last_change_date timestamptz,
+    creation_date timestamptz
+);
+
+create unique index book_subtype_id_uindex
+    on personal_lib.book_subtype (id);
+
+alter table personal_lib.book_subtype
+    add constraint book_subtype_pk
+        primary key (id);
+
+alter table personal_lib.book_subtype
+    add constraint book_subtype_book_type__fk
+        foreign key (book_type_id) references personal_lib.book_type (id);
+
+--таблица для book_subplace
+create table personal_lib.book_subplace
+(
+    id int not null default nextval('personal_lib.book_subplace_seq'),
+    name varchar not null,
+    description varchar,
+    book_place_id int,
+    book_place_name varchar,
+    last_change_date timestamptz,
+    creation_date timestamptz
+);
+
+reate unique index book_subplace_id_uindex
+	on personal_lib.book_subplace (id);
+
+alter table personal_lib.book_subplace
+	add constraint book_subplace_pk
+		primary key (id);
+
+--таблица для book_place
+create table personal_lib.book_place
+(
+    id int not null default nextval('personal_lib.book_place_seq'),
+    name varchar not null,
+    description varchar,
+    last_change_date timestamptz,
+    creation_date timestamptz
+);
+create unique index book_place_id_uindex
+	on personal_lib.book_place (id);
+
+alter table personal_lib.book_place
+	add constraint book_place_pk
+		primary key (id);
+
+--fk
+alter table personal_lib.book_subplace
+	add constraint book_subplace_book_place__fk
+		foreign key (book_place_id) references personal_lib.book_place (id);
+
+--books
+create table personal_lib.book
+(
+	id int default nextval('personal_lib.book_seq') not null,
+	name varchar not null,
+	key varchar not null,
+	description varchar,
+	creation_date timestamptz,
+	last_change_date timestamptz,
+	book_type_id int,
+	book_subtype_id int,
+	book_place_id int,
+	book_subplace_id int
+);
+
+create unique index book_column_1_uindex
+	on personal_lib.book (id);
+
+create unique index book_key_uindex
+	on personal_lib.book (key);
+
+alter table personal_lib.book
+	add constraint book_pk
+		primary key (id);
+
+--books fkeys
+
+alter table personal_lib.book
+	add constraint book_book_place__fk
+		foreign key (book_place_id) references personal_lib.book_place (id);
+
+alter table personal_lib.book
+	add constraint book_book_subplace__fk
+		foreign key (book_subplace_id) references personal_lib.book_subplace (id);
+
+alter table personal_lib.book
+	add constraint book_book_subtype__fk
+		foreign key (book_subtype_id) references personal_lib.book_subtype (id);
+
+alter table personal_lib.book
+	add constraint book_book_type__fk
+		foreign key (book_type_id) references personal_lib.book_type (id);
+
+--book_pict
+create table personal_lib.book_picture
+(
+	id int default nextval('personal_lib.book_picture_seq') not null,
+	book_id int,
+	name varchar not null,
+    to_delete boolean;
+);
+
+create unique index book_picture_id_uindex
+	on personal_lib.book_picture (id);
+
+alter table personal_lib.book_picture
+	add constraint book_picture_pk
+		primary key (id);
+
+alter table personal_lib.book_picture
+	add constraint book_picture_book__fk
+		foreign key (book_id) references personal_lib.book (id);
+
+

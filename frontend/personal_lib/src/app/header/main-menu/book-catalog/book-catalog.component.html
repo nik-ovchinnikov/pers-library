@@ -1,0 +1,90 @@
+
+<div class="container">
+    <!-- <div class="books"> -->
+        <div class="raw1">
+            <h1 (click)="onBooksClicked()">Книжный каталог<b *ngIf="!showBookCatalog"> > </b> <b *ngIf="showBookCatalog"> \/</b></h1>
+
+        </div>
+        <div class="col1">
+
+        </div>
+        <div class="col1" *ngIf="showBookCatalog">
+            <h3>Книги</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a routerLink="item/change/choose">
+                        <button type="button" class="btn btn-primary text-light">Изменить предмет</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="item/delete/choose">
+                        <button type="button" class="btn btn-danger text-light">Удалить предмет</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="item/add/form">
+                        <button type="button" class="btn btn-primary text-light">Добавить предмет</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="item/show">
+                        <button type="button" class="btn btn-primary text-light">Показать предметы</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col2" *ngIf="showBookCatalog">
+            <h3>Места хранения</h3>
+
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a routerLink="place/change/choose">
+                        <button type="button" class="btn btn-primary text-light">Изменить место хранения</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="place/delete/choose">
+                        <button type="button" class="btn btn-danger text-light">Удалить место</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="place/add/form">
+                        <button type="button" class="btn btn-primary text-light">Добавить место</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="place/show">
+                        <button type="button" class="btn btn-primary text-light">Показать места хранениня</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col3" *ngIf="showBookCatalog">
+            <h3>Типы</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a routerLink="type/change/choose">
+                        <button type="button" class="btn btn-primary text-light">Изменить типы</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="type/delete/choose">
+                        <button type="button" class="btn btn-danger text-light">Удалить типы</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="type/add/form">
+                        <button type="button" class="btn btn-primary text-light">Добавить типы</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="type/show">
+                        <button type="button" class="btn btn-primary text-light">Показать Типы</button>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    <!-- </div> -->
+</div>

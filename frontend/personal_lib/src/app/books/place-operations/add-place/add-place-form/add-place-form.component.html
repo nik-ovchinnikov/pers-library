@@ -1,0 +1,61 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="form-group add-input-form">
+      <div class="container">
+          <div>
+              <h3>Добавление места</h3>
+          </div>
+          <div>
+              <label for="name"> Имя нового места</label>
+          </div>
+          <div>
+              <input
+                  type="text"
+                  placeholder="Введите название"
+                  formControlName="name"
+                  (keyup)="onNameKeyUp($event)"
+
+
+              >
+          </div>
+          <!-- <span
+              *ngIf= "addPlaceForm.get('name').touched && this.nameExistFlag"
+          >Такое имя уже есть в каталоге. Введите другое</span><br> -->
+          <div>
+              <label for="name"> Описание нового места</label>
+          </div>
+          <div>
+              <textarea
+                  type="text"
+                  placeholder="Введите описание"
+                  formControlName="description"> </textarea> <br>
+
+          </div>
+
+          <div formArrayName="subPlaces">
+              <div (click)="onAddSubPlace()">
+                  <button type="button" class="btn btn-primary">Добавить подраздел</button>
+              </div>
+              <div *ngFor="let subPlace of this.subPlaceArray.controls; let i = index">
+                  <app-add-subplace-form [inputFormGroup]="$any(subPlace)"></app-add-subplace-form>
+                  <button type="button" class="btn btn-danger" (click)="removeSubPlace(i)">Удалить подраздел</button>
+              </div>
+
+          </div>
+          <div>
+              <button type="submit"
+                  [disabled]="equalSubplaceNames || formIsNotValid || placeNameExistsInBase"
+                  class="btn btn-success"
+              >Добавить</button>
+          </div>
+            <div>
+                <button type="button"
+                    class="btn btn-secondary"
+                    (click)="backToMenu()"
+                >Назад</button>
+            </div>
+          <br><p class="red-alert" *ngIf="equalSubplaceNames">Совпадают некоторые имена подразделов</p>
+          <br><p class="red-alert" *ngIf="formIsNotValid">Введите названия типа и всех подразделов</p>
+          <br><p class="red-alert" *ngIf="placeNameExistsInBase">Такое имя уже есть в базе, выберите другое</p>
+      </div>
+  </div>
+</form>

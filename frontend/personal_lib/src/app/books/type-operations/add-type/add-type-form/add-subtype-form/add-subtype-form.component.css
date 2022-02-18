@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: 150px auto;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    margin-top: 5px;
+}

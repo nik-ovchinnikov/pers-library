@@ -1,0 +1,38 @@
+<div class="cont1">
+  <h3 class="text-center">Выбирете место хранения, которое необходимо изменить</h3>
+
+
+  <!--TODO запрашивать подтверждение удаления-->
+  <!-- TODO удалить лишние страницы с переадрессациец после удаления, созранения  -->
+  <table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Название </th>
+            <th>Описание </th>
+            <th>Дата создания</th>
+            <th>Дата последнего изменения</th>
+            <th>Список подразделов</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let place of placesToShow; let i = index">
+            <td>{{ i + 1}}</td>
+            <td>{{ place.name }}</td>
+            <td>{{ place.description}}</td>
+            <td>{{ place.creationDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+            <td>{{ place.lastChangeDate | date: 'dd MMM yyyy H:mm:ss'}}</td>
+            <td>
+                <ul *ngFor="let subplace of place.bookSubPlaceList">
+                    <li data-bs-toggle="tooltip" [title]="subplace.description" >{{ subplace.name }}</li>
+                </ul>
+            </td>
+            <td>
+                <a routerLink="/place/change/change-form" (click)="chooseChangeItem(place)"><button type="button" class="btn btn-success">Изменить тип</button></a>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  <app-book-place-filter-sort></app-book-place-filter-sort>
+</div>

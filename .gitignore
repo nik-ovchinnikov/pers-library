@@ -1,0 +1,17 @@
+/backend/.idea
+/backend/.mvn
+/backend/src/main/resources/static/
+/backend/src/main/resources/log4j2.xml
+/backend/src/test/
+/backend/target/
+/backend/.gitignore
+/backend/*.iml
+
+/personal-library/
+personal-library.zip
+
+
+/frontend/personal_lib/node_modules
+/frontend/personal_lib/.idea
+/frontend/personal_lib/.angular
+/frontend/personal_lib/.vscode

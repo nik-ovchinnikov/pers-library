@@ -1,0 +1,61 @@
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="form-group add-input-form">
+      <div class="container">
+        <div>
+            <h3>Изменение места хранения</h3> 
+        </div>
+        <div>
+            <label for="name"> Имя места хранения</label>
+        </div>
+        <div>
+            <input
+                type="text"
+                placeholder="Введите название"
+                formControlName="name"
+                (keyup)="onNameKeyUp($event)"
+            >
+        </div>
+        <div>
+            <label for="name"> Описание места хранения</label> 
+        </div>
+        <div>
+            <textarea
+                type="text"
+                placeholder="Введите описание"
+                formControlName="description"> </textarea> 
+        </div>
+
+            <div formArrayName="subPlaces">
+                <div (click)="onAddSubPlace()">
+                  <button type="button" class="btn btn-secondary">Добавить подраздел</button>
+                </div>
+                <div *ngFor="let subPlace of this.subPlaceArray.controls; let i = index">
+                    <app-add-subplace-form [inputFormGroup]="$any(subPlace)"></app-add-subplace-form>
+                    <button type="button" class="btn btn-danger" (click)="removeSubPlace(i)">Удалить подраздел</button>
+                </div>
+
+            </div>
+
+            <!-- <a routerLink="/place/change/after-submit"> -->
+            <div>
+                <button type="submit"
+                    [disabled]="equalSubplaceNames || formIsNotValid || placeNameExistsInBase"
+                    class="btn btn-success">
+                    Сохранить изменения
+                </button >
+            </div>
+            <!-- </a> -->
+            <div>
+                <button type="button" class="btn btn-secondary" (click)="resetChanges()">Сбросить изменения</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-secondary" (click)="backToTable()">Назад</button>
+            </div>
+            <br><p class="red-alert"  *ngIf="equalSubplaceNames">Совпадают некоторые имена подтипов</p>
+            <br><p class="red-alert"  *ngIf="formIsNotValid">Введите названия типа и всех подтипов</p>
+            <br><p class="red-alert"  *ngIf="placeNameExistsInBase">Такое имя уже есть в базе, выберите другое</p>
+    </div>
+
+  </div>
+</form>

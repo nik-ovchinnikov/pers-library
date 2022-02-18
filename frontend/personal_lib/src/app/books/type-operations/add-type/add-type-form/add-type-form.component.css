@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+button.btn-danger {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+p.red-alert {
+    color: red;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+}
+
+.btn-secondary {
+  margin-top: 10px;
+}

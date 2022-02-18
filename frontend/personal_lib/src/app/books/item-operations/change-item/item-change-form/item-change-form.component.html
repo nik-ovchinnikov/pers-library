@@ -1,0 +1,161 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="form-group add-input-form">
+      <div class="container">
+          <div>
+              <h3>Изменение книги</h3>
+          </div>
+          <div>
+              <label for="name"> Название книги</label>
+          </div>
+          <div>
+              <input
+                  type="text"
+                  placeholder="Введите название"
+                  formControlName="name"
+              >
+          </div>
+          <div>
+              <label for="name"> Ключ</label>
+          </div>
+          <div>
+              <input
+                  type="text"
+                  placeholder="Введите название"
+                  formControlName="key"
+                  (keyup)="onKeyInputPrint($event)"
+              >
+          </div>
+          <!-- <span
+              *ngIf= "addPlaceForm.get('name').touched && this.nameExistFlag"
+          >Такое имя уже есть в каталоге. Введите другое</span><br> -->
+          <div>
+              <label for="name"> Описание книги</label>
+          </div>
+          <div>
+              <textarea
+                  type="text"
+                  placeholder="Введите описание"
+                  formControlName="description"> </textarea> <br>
+
+          </div>
+          <div>
+              <label for="type"> Выберите тип </label>
+          </div>
+          <div>
+            <select class="form-select form-control" formControlName="typeName">
+              <option *ngFor="let type of typeList" [value]="type.name">{{ type.name }}</option>
+            </select>
+          </div>
+
+          <div *ngIf="chosenType.bookSubTypeList[0]">
+              <label for="subTypeName"> Выберите подтип </label>
+          </div>
+          <div>
+            <select class="form-select form-control" formControlName="subTypeName" *ngIf="chosenType.bookSubTypeList[0]">
+              <option *ngFor="let subtype of chosenType.bookSubTypeList" [value]="subtype.name">{{ subtype.name }}</option>
+            </select>
+          </div>
+
+          <div>
+              <label for="type"> Выберите место расположения</label>
+          </div>
+          <div>
+            <select class="form-select form-control" formControlName="placeName">
+              <option *ngFor="let place of placeList" [value]="place.name">{{ place.name }}</option>
+            </select>
+          </div>
+
+          <div *ngIf="chosenPlace.bookSubPlaceList[0]">
+              <label for="subPlaceName"> Выберите место</label> 
+          </div>
+          <div>
+            <select class="form-select form-control" formControlName="subPlaceName" *ngIf="chosenPlace.bookSubPlaceList[0]">
+              <option 
+                *ngFor="let subplace of chosenPlace.bookSubPlaceList;" 
+                [value]="subplace.name" 
+              >{{ subplace.name }}</option>
+            </select>
+          </div>
+
+          <div class="">
+            <label *ngIf="this.oldPictures[0]">Cтарые фотографии</label>
+            <div
+                *ngFor="let itemPicture of this.oldPictures;  let i = index"
+                class=""
+            >
+                <div class="container">
+                    <button class="delete-photo-button file-upload btn btn-outline-danger" 
+                        (click)="onClickDeleteOldPicture($event)"
+                        type="button"
+                        [id]="itemPicture.name"
+                    >X</button>
+                    <img 
+                        class="add-photo-image file-upload"
+                        src="{{ './pictures/books/' + itemPicture.name}}"
+                    >
+                </div>
+                <!-- <br> -->
+            </div>
+        </div>
+          
+          <div formArrayName="bookPictures" class="cont2">
+            <div
+              class="container"
+              *ngFor="let bookPictures of controlsBookPictures; let i = index">
+                <div class="container">
+                    <input type="file"
+                        class="add-image-path form-control-file"
+                        [formControlName]="i"
+                        (change)="onFileAdded($event)"
+                    >
+                    <button 
+                      type="button"
+                      class="btn btn-outline-danger "
+                      (click)="onClickDeletePicture($event)"
+                      wasUploaded="false"
+                    >X</button>
+                    <img
+                        class="add-photo-image"
+                    >
+                    <!-- <span
+                        *ngIf="this.photoNameIsExistFlag"
+                    >Данное название фото уже есть в каталоге. Переименуйте и загрузите заново</span> -->
+                </div>
+                <br>
+            </div>
+            <label>Добавьте фотографии </label> <br>
+            <button
+              class="btn btn-secondary"
+              type="button"
+              (click)="onAddPhotoPath()">Добавить фото</button>
+        </div>
+
+          <div>
+              <!-- <button type="submit"
+                  [disabled]="equalSubplaceNames || formIsNotValid || placeNameExistsInBase"
+                  class="btn btn-success"
+              >Добавить</button> -->
+              <button type="submit"
+                  class="btn btn-success"
+                  [disabled]="bookKeyExistsInBase
+                    || formIsNotValid 
+                  "
+              >Изменить</button>
+          </div>
+            <div>
+                <button type="button"
+                    class="btn btn-secondary"
+                    (click)="backToMenu()"
+                >Назад</button>
+            </div>
+            <div>
+                <button type="button"
+                    class="btn btn-secondary"
+                    (click)="resetChanges()"
+                >Отменить изменения</button>
+            </div>
+          <br><p class="red-alert" *ngIf="formIsNotValid">Введите название книги, её тип, место расположения и все подразделы</p>
+          <br><p class="red-alert" *ngIf="bookKeyExistsInBase">Такой ключ уже есть в базе, выберите другой</p>
+      </div>
+  </div>
+</form>

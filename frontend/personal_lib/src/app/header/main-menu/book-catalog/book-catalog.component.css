@@ -1,0 +1,13 @@
+li {
+    margin: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.raw1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
