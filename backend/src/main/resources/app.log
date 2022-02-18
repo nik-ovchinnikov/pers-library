@@ -4295,3 +4295,15 @@
 2022-02-18 17:39:02,263 [http-nio-8080-exec-4] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
 2022-02-18 17:39:02,264 [http-nio-8080-exec-5] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
 2022-02-18 17:39:02,282 [http-nio-8080-exec-3] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-18 19:30:07,049 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 52 (/app/target/classes started by root in /app)
+2022-02-18 19:30:07,077 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-18 19:30:25,540 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 20.345 seconds (JVM running for 23.5)
+2022-02-18 19:32:45,235 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 39 (/app/target/classes started by root in /app)
+2022-02-18 19:32:45,256 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-18 19:33:03,636 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 20.106 seconds (JVM running for 22.89)
+2022-02-18 19:35:09,021 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 46 (/app/target/classes started by root in /app)
+2022-02-18 19:35:09,048 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-18 19:35:29,409 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 22.248 seconds (JVM running for 25.366)
+2022-02-18 19:36:25,812 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
+2022-02-18 19:36:25,833 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-18 19:36:46,136 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 22.033 seconds (JVM running for 24.852)
