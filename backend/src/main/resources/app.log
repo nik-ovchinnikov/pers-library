@@ -4307,3 +4307,50 @@
 2022-02-18 19:36:25,812 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
 2022-02-18 19:36:25,833 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
 2022-02-18 19:36:46,136 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 22.033 seconds (JVM running for 24.852)
+2022-02-22 07:08:39,641 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 38 (/app/target/classes started by root in /app)
+2022-02-22 07:08:39,691 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-22 07:09:01,487 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 23.698 seconds (JVM running for 26.713)
+2022-02-22 09:14:14,736 [http-nio-8080-exec-6] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:14:14,736 [http-nio-8080-exec-7] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:14:15,340 [http-nio-8080-exec-8] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:14:50,373 [http-nio-8080-exec-3] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:15:03,950 [http-nio-8080-exec-10] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:17:28,772 [http-nio-8080-exec-1] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:17:28,788 [http-nio-8080-exec-9] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:17:28,811 [http-nio-8080-exec-3] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:17:30,330 [http-nio-8080-exec-10] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:17:30,337 [http-nio-8080-exec-6] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:18:56,922 [http-nio-8080-exec-6] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:18:56,957 [http-nio-8080-exec-4] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:18:56,964 [http-nio-8080-exec-7] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:18:58,206 [http-nio-8080-exec-8] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:18:58,206 [http-nio-8080-exec-5] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:19:59,380 [http-nio-8080-exec-6] INFO  com.niki.pers_lib.services.book.book_place.BookPlaceService - Запрос на получение всех мест расположения книг
+2022-02-22 09:19:59,399 [http-nio-8080-exec-10] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-22 09:22:46,020 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
+2022-02-22 09:22:46,048 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-22 09:23:08,075 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 23.873 seconds (JVM running for 27.136)
+2022-02-22 09:23:59,939 [http-nio-8080-exec-10] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Добавлен новый тип: BookType{name='выафы', description='ывафва', bookSubTypeList=[Отсутствует], creationDate=Tue Feb 22 09:23:59 UTC 2022, lastChangeDate=Tue Feb 22 09:23:59 UTC 2022, id=-1}
+2022-02-22 09:24:03,796 [http-nio-8080-exec-2] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
+2022-02-23 06:18:30,053 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
+2022-02-23 06:18:30,085 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 06:18:50,160 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 22.014 seconds (JVM running for 25.167)
+2022-02-23 09:48:00,601 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 42 (/app/target/classes started by root in /app)
+2022-02-23 09:48:00,633 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:48:23,959 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 25.451 seconds (JVM running for 28.838)
+2022-02-23 09:51:20,094 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
+2022-02-23 09:51:20,126 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:51:43,710 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 25.619 seconds (JVM running for 28.888)
+2022-02-23 09:54:14,966 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 39 (/app/target/classes started by root in /app)
+2022-02-23 09:54:14,992 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:54:36,382 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 23.368 seconds (JVM running for 26.75)
+2022-02-23 09:55:21,006 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 39 (/app/target/classes started by root in /app)
+2022-02-23 09:55:21,033 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:55:43,609 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 24.516 seconds (JVM running for 27.587)
+2022-02-23 09:58:20,636 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 39 (/app/target/classes started by root in /app)
+2022-02-23 09:58:20,663 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:58:41,823 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 23.138 seconds (JVM running for 26.302)
+2022-02-23 09:59:37,025 [main] INFO  com.niki.pers_lib.PersLibApplication - Starting PersLibApplication using Java 11.0.14 on 8ebb3413eaa5 with PID 40 (/app/target/classes started by root in /app)
+2022-02-23 09:59:37,056 [main] INFO  com.niki.pers_lib.PersLibApplication - No active profile set, falling back to default profiles: default
+2022-02-23 09:59:59,463 [main] INFO  com.niki.pers_lib.PersLibApplication - Started PersLibApplication in 24.417 seconds (JVM running for 27.738)
+2022-02-23 10:00:29,552 [http-nio-8080-exec-10] INFO  com.niki.pers_lib.services.book.book_type.BookTypeService - Запрос на получение всех типов книг
